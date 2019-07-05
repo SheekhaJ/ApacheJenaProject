@@ -28,8 +28,8 @@ public class App
         Resource user1 = model.createResource(personURI).addProperty(VCARD4.fn, fullName);
         Resource user2 = user1.addProperty(VCARD4.given_name, "Jane").addProperty(VCARD4.family_name, "Doe");
         
-        StmtIterator iter = model.listStatements();
-        
+//        StmtIterator iter = model.listStatements();
+//        
 //        while(iter.hasNext()) {
 //        	Statement st = iter.nextStatement();
 //        	Resource subject = st.getSubject();
@@ -45,6 +45,11 @@ public class App
 //        	}        	
 //        }
         
-        model.write(System.out);
+        //Writing the RDF in XML format to console
+        model.write(System.out);        
+        
+        System.out.println("--------Writing RDF in Triples format------------------");
+        model.write(System.out, "N-TRIPLES");
+        
     }
 }
